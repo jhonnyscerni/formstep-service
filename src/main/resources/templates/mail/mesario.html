@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<body style="font-family: Arial; font-size: 14px;">
+	<div
+		style="width: 100%; background-color: #cacaca; font-family: Arial, Helvetica, sans-serif">
+		<table width="800" border="0"
+			style="background-color: #00C541; margin: 0 auto; padding: 25px 50px">
+			<tbody>
+				<tr>
+					<td style="text-align: left"><a href="#"
+						style="text-decoration: none; color: #FFFFFF; font-size: 20px; font-weight: 400">
+							Mesário Voluntário </a></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<table width="800" border="0"
+			style="background-color: #FCFAAB; margin: 0 auto; padding: 0 50px">
+			<tbody>
+				<tr>
+					<td style="text-align: left"><p
+						style="text-decoration: none; color: #000; font-size: 13px; font-weight: 600">
+							Este é um e-mail automático. Não é necessário respondê-lo. </p></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+
+
+
+		<table width="800" border="0" bgcolor="ffffff"
+			style="font-size: 14px; line-height: 20px; color: #515050; margin: 0 auto; padding: 30px 50px; background-color: #ffffff">
+			<tbody>
+				<tr>
+					<td>
+						<h1 style="font-size: 19px; font-weight: bold">
+							Prezado(a), <span th:text="${mesario?.nomeCompleto}"></span>
+						</h1>
+						<p>Sua inscrição no sistema Mesário Voluntário foi confirmada
+							com sucesso.</p>
+						<p>Verifique atentamente as informações contidas neste e-mail:</p>
+						<br> <!--  	<center>
+							<a href="#"
+								style="color: #515050; display: inline-block; border: 1px solid #515050; padding: 10px; border-radius: 5px; text-decoration: none; font-size: 15px"
+								target="_blank"> Visualizar comprovante de inscrição </a>
+						</center> -->
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<table width="800" border="0" bgcolor="ffffff"
+			style="font-size: 14px; line-height: 20px; color: #515050; margin: 0 auto; padding: 40px 60px; background-color: #ededed">
+			<tbody>
+				<tr>
+					<td>
+						<h1 style="font-size: 19px; font-weight: bold">Dados da
+							Inscrição</h1>
+						<hr
+							style="border: 1px solid #cacaca; width: 100%; border-top: none; margin-bottom: 15px">
+					</td>
+				</tr>
+				<tr>
+
+					<td>
+						<div class="texto-conteudo">
+							<strong>Nº do Titulo Eleitoral: </strong> <span
+								th:text="${mesario?.tituloEleitoral}"></span>
+						</div>
+					</td>
+
+				</tr>
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Nome Completo: </strong> <span
+								th:text="${mesario?.nomeCompleto}"></span>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Nome Mãe: </strong> <span th:text="${mesario?.nomeMae}"></span>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>E-mail: </strong> <span th:text="${mesario?.email}"></span>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Data de Nascimento: </strong> <span
+								th:text="${#temporals.format(mesario?.nascimento,'dd-MM-yyyy')}"></span>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Grau de Instrução: </strong> <span
+								th:text="${mesario?.grauInstrucao}"></span>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Já Trabalhou como Mesário? </strong>
+
+							<div th:switch="${mesario?.trabalhouMesario}">
+								<span th:case="false"> Não</span> <span th:case="true">
+									Sim</span>
+							</div>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Portador de Necessidades Especiais? </strong>
+
+							<div th:switch="${mesario?.necessidadeEspeciais}">
+								<span th:case="false"> Não</span> <span th:case="true">
+									Sim</span>
+							</div>
+
+						</div>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Bairro: </strong> <span th:text="${mesario?.bairro}"></span>
+						</div>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Município: </strong> <span
+								th:text="${mesario?.municipio}"></span>
+						</div>
+					</td>
+
+				</tr>
+
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Endereço: </strong> <span th:text="${mesario?.endereco}"></span>
+						</div>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Complemento do Endereço: </strong> <span
+								th:text="${mesario?.complementoEndereco}"></span>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Informações de Referência: </strong> <span
+								th:text="${mesario?.informacoesReferenciaEndereco}"></span>
+						</div>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>CEP: </strong><span th:text="${mesario?.cep}"></span>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+
+					<td>
+						<div class="texto-conteudo">
+							<strong>Telefone: </strong> <span th:text="${mesario?.telefone}"></span>
+						</div>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Celular: </strong> <span th:text="${mesario?.celular}"></span>
+						</div>
+					</td>
+				</tr>
+
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Você é Funcionário Público? </strong>
+
+							<div th:switch="${mesario?.servidorPublico}">
+								<span th:case="false"> Não</span> <span th:case="true">
+									Sim</span>
+							</div>
+
+
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Possui Experiência com Informática? </strong>
+
+							<div th:switch="${mesario?.possuiExperienciaInformatica}">
+								<span th:case="false"> Não</span> <span th:case="true">
+									Sim</span>
+							</div>
+
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Nome da Empresa, Órgão ou Instituição em que
+								Trabalha: </strong> <span th:text="${mesario?.localTrabalho}"></span>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<div class="texto-conteudo">
+							<strong>Endereço Comercial: </strong><span
+								th:text="${mesario?.enderecoTrabalho}"></span>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+
+					<td>
+						<div class="texto-conteudo">
+							<strong>Data de Inscrição: </strong><span
+								th:text="${#temporals.format(mesario?.dataInscricao,'dd-MM-yyyy')}"></span>
+						</div>
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+</body>
+</html>
